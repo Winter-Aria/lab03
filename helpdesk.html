@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Demonstrates some basic HTML form elements" >
-    <meta name="keywords" content="HTML, Form, tags" >
+    <meta name="keywords" content="HTML, Form, tags, Helpdesk, Swinburne" >
     <meta name="author" content="A Lecturer"  >
     <title>CWA Help Desk Appointment</title>
 </head>
 
 
 <body>
+    <!--Swinburne logo linking to swinburne website-->
     <a href="http://www.swin.edu.au">
         <img src="Images/logo.png" alt="Logo"> 
     </a>
@@ -19,7 +20,9 @@
     <p>The Help Desk is located in ATC620. Open 10:30 to 19:00 Monday to Friday.</p>
     <p>Check Blackboard for when CWA tutors will be there.</p>
     
-    <form>
+    <!-- form that sends through  request body to mercury.swin.edu.au when submitted -->
+    <form action="https://mercury.swin.edu.au/it000000/formtest.php" , method ="post">
+        <!--text inputs checking for student details-->
         <fieldset>
             <legend>Student Details</legend>
             <label for="studentID">Student ID:</label>
@@ -33,6 +36,7 @@
 
         </fieldset>
 
+        <!-- Radio letting the user select on of the following options of units-->
         <fieldset>
             <legend>Your Unit</legend>
             <input type="radio" id="cos10011" name="unit" value="COS10011" required>
@@ -43,6 +47,7 @@
             <label for="cos60007">COS60007</label>
         </fieldset>
 
+<!-- Tutor selection through dropdown menu-->
         <label for="tutor">Your Tutor:</label>
         <select id="tutor" name="tutor" required>
             <option value="">Please Select</option>
@@ -51,6 +56,8 @@
             <option value="Tutor3">Tutor 3</option>
         </select>
         <br>
+
+        <!-- Issue checkbox with html checked by default-->
         
         <fieldset>
             <legend>Issue</legend>
@@ -65,9 +72,15 @@
             <input type="checkbox" id="mysql" name="issue" value="MySQL">
             <label for="mysql">MySQL</label>
         </fieldset>
+
+        <!-- description  for the issue-->
+
+
         <label for="description">Description of Issue:</label>
         <textarea id="description" name="description" placeholder="Write description of your problem here..."></textarea>
         <br>
+
+        <!--date and time  which must  follow expected format of dd/mm/yy-->
         
         <label for="date">Preferred Date:</label>
         <input type="text" id="date" name="date" placeholder="dd/mm/yyyy" pattern="\d{2}/\d{2}/\d{4}">
